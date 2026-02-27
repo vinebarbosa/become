@@ -102,18 +102,18 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-black py-12 px-8">
+    <div className="min-h-screen bg-black px-4 py-6 sm:px-8 sm:py-12">
       <div className="w-full max-w-6xl mx-auto">
         {/* Título do Desafio */}
-        <h1 className="text-yellow-400 text-6xl font-bold text-center mb-12 tracking-tight">
+        <h1 className="mb-8 text-center text-4xl font-bold tracking-tight text-yellow-400 sm:mb-12 sm:text-6xl">
           Become
         </h1>
 
         {/* Barra de Progresso do Desafio */}
-        <div className="max-w-2xl mx-auto mb-16">
+        <div className="mx-auto mb-10 w-full max-w-2xl sm:mb-16">
           <div className="flex justify-between items-center mb-3">
-            <span className="text-yellow-400 font-medium">Progresso do Desafio</span>
-            <span className="text-yellow-400 font-medium">
+            <span className="text-sm font-medium text-yellow-400 sm:text-base">Progresso do Desafio</span>
+            <span className="text-sm font-medium text-yellow-400 sm:text-base">
               {challengeDaysPassed}/30 dias
             </span>
           </div>
@@ -126,7 +126,7 @@ export default function App() {
         </div>
 
         {/* Sessões dos Usuários */}
-        <div className="grid grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-12">
           <UserSection
             user={users.vini}
             userId="vini"

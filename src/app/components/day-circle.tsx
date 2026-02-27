@@ -27,8 +27,9 @@ export function DayCircle({
       onClick={onClick}
       disabled={!isAvailable}
       className={`
-        w-14 h-14 rounded-full flex items-center justify-center
-        font-semibold text-sm transition-all duration-300
+        h-10 w-10 rounded-full sm:h-14 sm:w-14
+        flex items-center justify-center
+        font-semibold text-xs sm:text-sm transition-all duration-300
         ${
           completed
             ? "bg-yellow-400 text-black hover:bg-yellow-300 hover:scale-110 active:scale-95"

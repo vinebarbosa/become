@@ -55,15 +55,15 @@ export function UserSection({ user, userId, onDayClick }: UserSectionProps) {
   return (
     <div className="w-full">
       {/* Nome do Usuário */}
-      <h2 className="text-yellow-400 text-3xl font-bold mb-8 text-left flex items-baseline justify-between">
+      <h2 className="mb-5 flex flex-col items-start justify-between gap-1 text-left text-xl font-bold text-yellow-400 sm:mb-8 sm:flex-row sm:items-baseline sm:text-3xl">
         <span>{user.name}</span>
-        <span className="text-yellow-400/70 text-lg font-normal">
+        <span className="text-sm font-normal text-yellow-400/70 sm:text-lg">
           {completedDays} check-ins
         </span>
       </h2>
 
       {/* Grid de Círculos */}
-      <div className="grid grid-cols-6 gap-4 justify-items-center px-4">
+      <div className="grid grid-cols-6 justify-items-center gap-x-1 gap-y-2 px-0 sm:gap-4 sm:px-4">
         {user.days.map((day, index) => {
           const isAvailable = index < currentDaysPassed;
           return (
