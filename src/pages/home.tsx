@@ -1,25 +1,17 @@
-import { Progress } from "../components/ui/progress";
-import { UserSection } from "../components/user-section";
+import { ChallengeList } from "@/components/challenge-list";
+import { CreateChallenge } from "@/components/create-challenge";
+import { useChallenges } from "@/resources/challenge/queries/use-challenges";
 
 export function Home() {
-	return (
-		<div className="container mx-auto p-8">
-			<h1 className="text-center text-4xl font-semibold tracking-tight sm:mb-12 sm:text-6xl m-0">
-				Estudar 1h por dia durante 30 dias
-			</h1>
+	const { data, isLoading } = useChallenges();
 
-			<div className="max-w-3xl mx-auto">
-				<div className="flex justify-between">
-          <h3 className="text-xl mb-2">Progresso do desafio</h3>
-          <span>50%</span>
-        </div>
-				<Progress value={50} className="mb-8" />
-			</div>
+	if (isLoading) {
+		return null
+	}
 
-			<div className="flex flex-wrap gap-8 justify-center">
-				<UserSection title="Vine" />
-				<UserSection title="Neto" />
-			</div>
-		</div>
-	);
+	if (!data || data.length === 0) {
+		return <CreateChallenge />;
+	}
+
+	return <ChallengeList data={data} />;
 }
